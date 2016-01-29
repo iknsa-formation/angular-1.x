@@ -1,0 +1,25 @@
+{
+  "name": "angular-1.x-full",
+  "version": "0.0.0",
+  "homepage": "https://github.com/iknsa-formation/angular-1.x-full",
+  "authors": [
+    "Khalid Sookia <khalidsookia@gmail.com>"
+  ],
+  "keywords": [
+    "AngularJS",
+    "Full",
+    "course"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.4.9",
+    "bootstrap": "~3.3.6"
+  }
+}
