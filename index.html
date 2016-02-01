@@ -12,41 +12,29 @@
     <body class="container" ng-app>
 
         <div class="jumbotron">
-            
+            <h1>ngModel</h1>
             <label for="name">Name: </label>
             <!-- Directive ng-model -->
             <input type="text" ng-model="yourName" placeholder="Enter a name here">
             
-            <h2>hello {{ yourName | uppercase }}</h2>
-        </div><!-- jQuery Version -->
+            <h2>hello {{ yourName }}</h2>
+        </div>
+
         <div class="jumbotron">
-            <div class="row">
-                <div class="container">
-                    <input type="text" id="hello">
-                    <hr>
-                    <h2>hello <span id="printHello"></span></h2>
-                </div>
+            <h1>ngClick</h1>
+
+            <button ng-click="tab = 1" class="btn btn-success">Success</button>
+            <button ng-click="tab = 2" class="btn btn-danger">Danger</button>
+            <button ng-click="tab = 0" class="btn btn-default">Default</button>
+            <div ng-show="tab === 1">
+                <h2>Contenu success avec angular</h2>
+            </div>
+
+            <div ng-show="tab === 2">
+                <h2>Contenu danger avec angular</h2>
             </div>
         </div>
 
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
-        <script>
-            function checkHelloContent() {
-                if($('#hello').val() === null || $('#hello').val() === "") {
-                    $('#printHello').css('display', 'none');
-                } else {
-                    $('#printHello').css('display', 'initial');
-                }
-            }
-
-            checkHelloContent();
-
-            $('#hello').keyup(function(event) {
-                checkHelloContent();
-
-                $('#printHello').text($(this).val());
-            });
-        </script>
         <!-- JavaScript Dependencies -->
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/angular/angular.min.js"></script>
