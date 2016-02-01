@@ -18,8 +18,37 @@
             <input type="text" ng-model="yourName" placeholder="Enter a name here">
             
             <h2>hello {{ yourName | uppercase }}</h2>
+        </div><!-- jQuery Version -->
+        <div class="jumbotron">
+            <div class="row">
+                <div class="container">
+                    <input type="text" id="hello">
+                    <hr>
+                    <h2>hello <span id="printHello"></span></h2>
+                </div>
+            </div>
         </div>
+
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script>
+            function checkHelloContent() {
+                if($('#hello').val() === null || $('#hello').val() === "") {
+                    $('#printHello').css('display', 'none');
+                } else {
+                    $('#printHello').css('display', 'initial');
+                }
+            }
+
+            checkHelloContent();
+
+            $('#hello').keyup(function(event) {
+                checkHelloContent();
+
+                $('#printHello').text($(this).val());
+            });
+        </script>
         <!-- JavaScript Dependencies -->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/angular/angular.min.js"></script>
     </body>
 </html>
