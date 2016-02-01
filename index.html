@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, user-scalable = yes">
 
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
     </head>
     <body class="container" ng-app>
 
@@ -35,8 +36,42 @@
             </div>
         </div>
 
+        <div class="jumbotron">
+            <style>
+                #contenu1, #contenu2 {
+                    display: none;
+                }
+            </style>
+            <h1>jQuery version of ngClick</h1>
+            <button class="btn btn-success contenu1" onclick="showContent1()">Success</button>
+            <button class="btn btn-danger contenu2" onclick="showContent2()">Danger</button>
+            <button class="btn btn-default" onclick="showContent3()">Default</button>
+            <div id="contenu1">
+                <h2>Contenu success avec javaScript</h2>
+            </div>
+
+            <div id="contenu2">
+                <h2>Contenu danger avec angular</h2>
+            </div>
+
+            <script>
+                function showContent1() {
+                    document.getElementById('contenu1').style.display = 'block';
+                    document.getElementById('contenu2').style.display = 'none';
+                }
+
+                function showContent2() {
+                    document.getElementById('contenu1').style.display = 'none';
+                    document.getElementById('contenu2').style.display = 'block';
+                }
+
+                function showContent3() {
+                    document.getElementById('contenu1').style.display = 'none';
+                    document.getElementById('contenu2').style.display = 'none';
+                }
+            </script>
+        </div>
         <!-- JavaScript Dependencies -->
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/angular/angular.min.js"></script>
     </body>
 </html>
